@@ -1,0 +1,14 @@
+.header__user {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+
+@media screen and (max-width: 730px) {
+  .header__user {
+    padding-right: 30px;
+
+  }
+}
