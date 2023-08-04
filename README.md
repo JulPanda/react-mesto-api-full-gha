@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.30.222
 
-Frontend https://...
+Frontend https://jul-mesto.nomoreparties.co
 
-Backend https://...
+Backend https://api.jul-mesto.nomoreparties.co
