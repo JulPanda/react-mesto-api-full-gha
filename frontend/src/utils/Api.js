@@ -98,7 +98,8 @@ class Api {
 
 const api = new Api({ 
   // url: "https://nomoreparties.co/v1/cohort-62",
-  url: "http://localhost:3000",  
+  // url: "http://localhost:3000",
+  url: "http://api.jul-mesto.nomoreparties.co",
   headers: {
     "content-type": "application/json",
      //authorization: "13bee0f6-be28-45c8-b317-73da0bb635bc",
