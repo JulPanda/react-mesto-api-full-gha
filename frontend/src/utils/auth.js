@@ -2,7 +2,7 @@ import checkResponse from "./checkResponse";
 
 // export const BASE_URL = "https://auth.nomoreparties.co";
 // export const BASE_URL = "http://localhost:3000";
- export const BASE_URL ="http://api.jul-mesto.nomoreparties.co";
+export const BASE_URL ="https://api.jul-mesto.nomoreparties.co";
 
 function request(url, options) {
   return fetch(`${BASE_URL}${url}`, options).then(checkResponse);

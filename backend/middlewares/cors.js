@@ -1,6 +1,7 @@
+/* eslint-disable linebreak-style */
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  // 'https://jul-mesto.nomoreparties.co',
+  'https://jul-mesto.nomoreparties.co',
   'http://jul-mesto.nomoreparties.co',
   // 'https://localhost:3001',
   'http://localhost:3001',
