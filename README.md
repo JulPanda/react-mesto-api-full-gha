@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 130.193.54.29
+IP <130.193.54.29>
 
 Frontend https://jul-mesto.nomoreparties.co
 
