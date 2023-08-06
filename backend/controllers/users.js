@@ -10,7 +10,7 @@ const ConflictError = require('../errors/conflictError');
 
 const { STATUS_OK, STATUS_CREATED } = require('../utils/constants');
 
-const { SECRET } = require('../utils/config');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const createUser = (req, res, next) => {
   const {
@@ -138,7 +138,7 @@ const login = (req, res, next) => {
             // const token = jwt.sign({ _id: user._id }, 'secret-key');
             const jwttoken = jwt.sign({
               _id: user._id,
-            }, SECRET);
+            }, NODE_ENV === 'production' ? JWT_SECRET : 'secret-key');
             // прикрепить его к куке
             res.cookie('jwttoken', jwttoken, {
               maxAge: 3600000,

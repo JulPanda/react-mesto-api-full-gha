@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const UnauthorizedError = require('../errors/unauthorizedError');
 
-const { SECRET } = require('../utils/config');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const auth = (req, res, next) => {
   const token = req.cookies.jwttoken;
@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
     if (!token) {
       next(new UnauthorizedError('Необходима авторизация'));
     } else {
-      payload = jwt.verify(token, SECRET);
+      payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'secret-key');
     // eslint-disable-next-line no-console
     // console.log(payload);
     }
