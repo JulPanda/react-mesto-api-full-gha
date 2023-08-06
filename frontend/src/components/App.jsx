@@ -101,7 +101,8 @@ function App() {
   };
 
   useEffect(() => {
-    api
+    if (loggedIn) {
+      api
       .getCurrentUser()
       .then((userData) => {
         setCurrentUser(userData);
@@ -119,6 +120,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
+    }    
   }, [loggedIn]);
 
   function handleEditProfileClick() {

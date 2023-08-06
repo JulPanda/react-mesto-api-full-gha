@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 const express = require('express');
 
 const mongoose = require('mongoose');
@@ -9,13 +8,14 @@ const { cors } = require('./middlewares/cors');
 const NotFoundError = require('./errors/notFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { SERVER_PORT, DB_MANGO } = require('./utils/config');
+
 const app = express();
 
 const errorHandler = require('./middlewares/errorHandler');
 const router = require('./routes');
 
-mongoose.connect(DB_URL);
+mongoose.connect(DB_MANGO);
 
 app.use(express.json());
 
@@ -41,6 +41,6 @@ app.use('*', (req, res, next) => {
 app.use(errors());
 app.use(errorHandler);
 
-app.listen(PORT, () => {
+app.listen(SERVER_PORT, () => {
   console.log('Сервер запущен');
 });

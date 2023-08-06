@@ -10,6 +10,8 @@ const ConflictError = require('../errors/conflictError');
 
 const { STATUS_OK, STATUS_CREATED } = require('../utils/constants');
 
+const { SECRET } = require('../utils/config');
+
 const createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password,
@@ -136,7 +138,7 @@ const login = (req, res, next) => {
             // const token = jwt.sign({ _id: user._id }, 'secret-key');
             const jwttoken = jwt.sign({
               _id: user._id,
-            }, 'secret-key');
+            }, SECRET);
             // прикрепить его к куке
             res.cookie('jwttoken', jwttoken, {
               maxAge: 3600000,
