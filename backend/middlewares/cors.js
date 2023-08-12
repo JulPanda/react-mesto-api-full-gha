@@ -3,8 +3,8 @@
 const allowedCors = [
   'https://jul-mesto.nomoreparties.co',
   'http://jul-mesto.nomoreparties.co',
-  // 'http://localhost:3001',
-  'https://localhost:3001',
+  // 'http://localhost:3002',
+  'https://localhost:3002',
 ];
 
 const cors = (req, res, next) => {
